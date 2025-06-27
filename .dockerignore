@@ -1,0 +1,15 @@
+# Ignore processed or large datasets
+datasets/
+*.npz
+*.npy
+*.csv
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore system or log files
+*.log
+*.swp
+.DS_Store

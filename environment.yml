@@ -1,0 +1,38 @@
+name: mlg
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - biopython
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - tqdm
+  - mafft
+  - samtools
+  - bwa
+  - entrez-direct
+  - iqtree
+  - blast
+  - pygraphviz
+  - networkx
+  - gawk
+  - perl
+  - snakemake-minimal
+  - pangolin
+  - pip:
+      - transformers
+      - torch==2.7.0
+      - torch-geometric
+      - einops
+      - tokenizers
+      - huggingface-hub
+      - rich
+      - safetensors
+      - triton

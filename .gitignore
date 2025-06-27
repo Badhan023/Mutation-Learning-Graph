@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Data artifacts
+*.npz
+*.npy
+*.csv
+*.log
+*.swp
+
+# Datasets not intended for version control
+datasets/
