@@ -34,7 +34,7 @@ echo $2
 dir="$2"   #directory
 
 #lineage to label
-#python3 lineage_to_label.py
+#python3 lineages/lineage_to_label.py
 
 #append refSeq
 # Ensure reference.fasta ends with a newline, then concat
