@@ -120,7 +120,7 @@ np.savez_compressed(
     is_hypothetical=is_hypothetical_arr,
 )
 
-print(f"✅ Node features saved ➜ {output_npz}")
+print(f"Node features saved ➜ {output_npz}")
 
 # Optional: print stats
 data = np.load(output_npz, allow_pickle=True)
@@ -206,7 +206,7 @@ for nid in node_ids:
 print(lineage_lst.count(-1))
 missing_labels = {lineage for lineage in lineages.values() if lineage2label.get(lineage, -1) == -1}
 if missing_labels:
-    print(f"⚠️ Warning: {len(missing_labels)} unmapped lineages found:\n", missing_labels)
+    print(f"Warning: {len(missing_labels)} unmapped lineages found:\n", missing_labels)
 
 
 # --------------------------------------------------------------------------- #
@@ -235,7 +235,7 @@ np.savez_compressed(
     is_hypothetical=is_hypothetical_arr,
 )
 
-print(f"✅ Node features saved ➜ {output_npz}")
+print(f"Node features saved ➜ {output_npz}")
 
 # Optional: print stats
 data = np.load(output_npz, allow_pickle=True)
