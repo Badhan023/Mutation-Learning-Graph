@@ -47,4 +47,4 @@ for node_name, mutation_list in mutation_dict.items():
 with open(output_fasta, "w") as f_out:
     SeqIO.write(hypothetical_records, f_out, "fasta")
 
-print(f"✅ {len(hypothetical_records)} hypothetical sequences saved")
+print(f"{len(hypothetical_records)} hypothetical sequences saved")
