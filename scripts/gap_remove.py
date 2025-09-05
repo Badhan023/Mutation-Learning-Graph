@@ -8,7 +8,7 @@ def remove_gaps_from_fasta(input_fasta, output_fasta):
 
     for record in SeqIO.parse(input_fasta, "fasta"):
         cleaned_seq_str = str(record.seq).replace("-", "")
-        cleaned_seq = Seq(cleaned_seq_str)  # ✅ Wrap with Seq()
+        cleaned_seq = Seq(cleaned_seq_str)  #Wrap with Seq()
         cleaned_record = SeqRecord(
             seq=cleaned_seq,
             id=record.id,
@@ -17,7 +17,7 @@ def remove_gaps_from_fasta(input_fasta, output_fasta):
         cleaned_records.append(cleaned_record)
 
     SeqIO.write(cleaned_records, output_fasta, "fasta")
-    print(f"✅ Cleaned FASTA saved to: {output_fasta}")
+    print(f"Cleaned FASTA saved to: {output_fasta}")
 
 # Usage from command line
 if __name__ == "__main__":
