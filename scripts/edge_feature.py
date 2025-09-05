@@ -86,7 +86,7 @@ np.savez_compressed(
     reverse=np.array(reverse_flags)
 )
 
-print(f"✅ Edge features saved to: {OUTPUT_FILE}")
+print(f"Edge features saved to: {OUTPUT_FILE}")
 # Optional: print stats
 data = np.load(OUTPUT_FILE, allow_pickle=True)
 print("── Saved NPZ contents ──")
