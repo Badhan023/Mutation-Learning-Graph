@@ -27,4 +27,4 @@ lineage_dict = dict(zip(filtered_metadata['Accession ID'], filtered_metadata['Li
 with open(lineage_json, 'w') as f:
     json.dump(lineage_dict, f)
 
-print(f"✅ Saved lineage.json with {len(lineage_dict)} entries.")
+print(f"Saved lineage.json with {len(lineage_dict)} entries.")
