@@ -1,1 +1,2 @@
 We present the Mutation Learning Graph (MLG), a directed graph framework that organizes SARS-CoV-2 variants based on their cumulative mutation profiles relative to the reference genome (NC\_045512.2), thereby capturing the dynamics of mutation propagation.
+MLG datasets of 10 geographic locations can be found [here](https://zenodo.org/records/16952912).
