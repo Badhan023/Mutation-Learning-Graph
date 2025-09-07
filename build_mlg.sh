@@ -1,17 +1,3 @@
-#!/bin/bash
-#SBATCH --job-name=habijabi
-#SBATCH --account=gpce
-#SBATCH --partition=a100_normal_q
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=20:00:00
-#SBATCH --gres=gpu:1        # Request 1 GPU
-#SBATCH --mem=32G           # Request 32 GB of memory
-#SBATCH --cpus-per-task=16
-#SBATCH --mail-type=ALL   # Send t notification at the start and end of the job
-#SBATCH --mail-user=badhan@vt.edu   # Send email notification to this address
-#SBATCH --output=/home/badhan/quasi/slurm_out/%j.out
-
 eval "$(conda shell.bash hook)"
 
 module reset
