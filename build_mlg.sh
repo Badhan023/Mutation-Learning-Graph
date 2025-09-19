@@ -1,6 +1,4 @@
-#write your own headers here
-
-eval "$(conda shell.bash hook)"
+#!/bin/bash
 
 module reset
 module list
@@ -22,17 +20,20 @@ dir="$2"   #directory
 #lineage to label
 #python3 lineages/lineage_to_label.py
 
+#filter sequences with N
+python3 scripts/filter_fasta.py "$dir"/sequences.fasta "$dir"/filtered_sequences.fasta
+
+#sort by date
+python3 scripts/sort_by_date.py "$dir"/filtered_sequences.fasta "$dir"/sorted_sequences.fasta
+
 #append refSeq
 # Ensure reference.fasta ends with a newline, then concat
 # The trailing \n inside $(cat ...) guarantees the blank line.
-python3 scripts/append_fasta.py "$refSeq" "$dir"/sequences.fasta "$dir"/all_sequences.fasta
-
-#sort by date and output two files: one with refseq(sorted_sequences.fasta) and one without(sequence.fasta)
-python3 scripts/sort_by_date.py "$dir"/sequences.fasta "$dir"/sorted_sequences.fasta
+python3 scripts/append_fasta.py "$refSeq" "$dir"/sorted_sequences.fasta "$dir"/all_sequences.fasta
 
 #mafft
-mafft --6merpair --thread -1 --keeplength --addfragments "$dir"/sorted_sequences.fasta "$refSeq" > "$dir"/aligned_sequences.fasta
-rm "$dir"/sorted_sequences.fasta
+mafft --6merpair --thread -1 --keeplength --addfragments "$dir"/all_sequences.fasta "$refSeq" > "$dir"/aligned_sequences.fasta
+#rm "$dir"/sorted_sequences.fasta
 
 #truncate coding region
 python3 scripts/truncate.py "$dir"/aligned_sequences.fasta "$dir"/truncated_sequences.fasta
