@@ -4,8 +4,6 @@ eval "$(conda shell.bash hook)"
 
 module reset
 module list
-echo "job $SLURM_JOB_ID has started on node" 
-
 
 conda activate mlg
 
