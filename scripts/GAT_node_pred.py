@@ -160,7 +160,7 @@ def summarize(metric_list):
     return np.nanmean(metric_list), np.nanstd(metric_list)
 
 summary_text = []
-summary_text.append("\n✅ Bootstrap Results (10 seeds)")
+summary_text.append("\nBootstrap Results (10 seeds)")
 summary_text.append("Accuracy:  {:.4f} ± {:.4f}".format(*summarize(all_acc)))
 summary_text.append("F1 Score:  {:.4f} ± {:.4f}".format(*summarize(all_f1)))
 summary_text.append("AUROC:     {:.4f} ± {:.4f}".format(*summarize(all_auroc)))
@@ -331,7 +331,7 @@ def summarize(metric_list):
     return np.nanmean(metric_list), np.nanstd(metric_list)
 
 summary_text = []
-summary_text.append("\n✅ Bootstrap Results (10 seeds)")
+summary_text.append("\nBootstrap Results (10 seeds)")
 summary_text.append("Accuracy:  {:.4f} ± {:.4f}".format(*summarize(all_acc)))
 summary_text.append("F1 Score:  {:.4f} ± {:.4f}".format(*summarize(all_f1)))
 summary_text.append("AUROC:     {:.4f} ± {:.4f}".format(*summarize(all_auroc)))
