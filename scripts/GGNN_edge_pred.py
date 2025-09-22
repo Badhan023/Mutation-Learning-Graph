@@ -166,7 +166,7 @@ auroc_avg, auroc_std = np.nanmean(auroc_list), np.nanstd(auroc_list)
 auprc_avg, auprc_std = np.nanmean(auprc_list), np.nanstd(auprc_list)
 
 result_str = f"""
-✅ GGNN Bootstrap Results (10 seeds)
+GGNN Bootstrap Results (10 seeds)
 Accuracy:  {acc_avg:.4f} ± {acc_std:.4f}
 F1 Score:  {f1_avg:.4f} ± {f1_std:.4f}
 AUROC:     {auroc_avg:.4f} ± {auroc_std:.4f}
