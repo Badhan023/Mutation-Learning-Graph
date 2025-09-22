@@ -159,7 +159,7 @@ with open(output_file, 'w') as f:
     f.write(f"AUROC:     {means[2]:.4f} ± {stds[2]:.4f}\n")
     f.write(f"AUPRC:     {means[3]:.4f} ± {stds[3]:.4f}\n")
 
-print("\n✅ Results saved to:", output_file)
+print("\nResults saved to:", output_file)
 print("Final Bootstrapped Metrics:")
 print(f"Accuracy:  {means[0]:.4f} ± {stds[0]:.4f}")
 print(f"F1 Score:  {means[1]:.4f} ± {stds[1]:.4f}")
