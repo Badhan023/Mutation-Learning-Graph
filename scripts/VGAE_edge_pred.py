@@ -152,13 +152,13 @@ for seed in SEEDS:
             prob = prob.clamp(min=1e-7, max=1 - 1e-7)
             target = edge_label[train_idx]
             if torch.any(torch.isnan(prob)) or torch.any(torch.isnan(target)):
-                print("⚠️ NaNs detected — skipping this epoch")
+                print("NaNs detected — skipping this epoch")
                 continue
             loss = F.binary_cross_entropy(prob, target) + (1 / num_nodes) * model.kl_loss()
             loss.backward()
             optimizer.step()
         except Exception as e:
-            print(f"🚨 Skipping epoch due to error: {e}")
+            print(f"Skipping epoch due to error: {e}")
             continue
 
     model.eval()
@@ -189,7 +189,7 @@ with open(output_file, 'w') as f:
     f.write(f"AUROC:     {means[2]:.4f} ± {stds[2]:.4f}\n")
     f.write(f"AUPRC:     {means[3]:.4f} ± {stds[3]:.4f}\n")
 
-print("\n✅ Results saved to:", output_file)
+print("\nResults saved to:", output_file)
 print("\nFinal Bootstrapped Metrics:")
 print(f"Accuracy:  {means[0]:.4f} ± {stds[0]:.4f}")
 print(f"F1 Score:  {means[1]:.4f} ± {stds[1]:.4f}")
@@ -351,13 +351,13 @@ for seed in SEEDS:
             prob = prob.clamp(min=1e-7, max=1 - 1e-7)
             target = edge_label[train_idx]
             if torch.any(torch.isnan(prob)) or torch.any(torch.isnan(target)):
-                print("⚠️ NaNs detected — skipping this epoch")
+                print("NaNs detected — skipping this epoch")
                 continue
             loss = F.binary_cross_entropy(prob, target) + (1 / num_nodes) * model.kl_loss()
             loss.backward()
             optimizer.step()
         except Exception as e:
-            print(f"🚨 Skipping epoch due to error: {e}")
+            print(f"Skipping epoch due to error: {e}")
             continue
 
     model.eval()
@@ -388,7 +388,7 @@ with open(output_file, 'w') as f:
     f.write(f"AUROC:     {means[2]:.4f} ± {stds[2]:.4f}\n")
     f.write(f"AUPRC:     {means[3]:.4f} ± {stds[3]:.4f}\n")
 
-print("\n✅ Results saved to:", output_file)
+print("\nResults saved to:", output_file)
 print("\nFinal Bootstrapped Metrics:")
 print(f"Accuracy:  {means[0]:.4f} ± {stds[0]:.4f}")
 print(f"F1 Score:  {means[1]:.4f} ± {stds[1]:.4f}")
