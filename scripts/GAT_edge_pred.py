@@ -132,7 +132,7 @@ with open(output_file, 'w') as f:
     f.write(f"AUROC:     {means[2]:.4f} ± {stds[2]:.4f}\n")
     f.write(f"AUPRC:     {means[3]:.4f} ± {stds[3]:.4f}\n")
 
-print("\n✅ Results saved to:", output_file)
+print("\nResults saved to:", output_file)
 print("\nFinal Bootstrapped Metrics:")
 print(f"Accuracy:  {means[0]:.4f} ± {stds[0]:.4f}")
 print(f"F1 Score:  {means[1]:.4f} ± {stds[1]:.4f}")
@@ -325,7 +325,7 @@ for epoch in range(1, 201):
     if epoch % 10 == 0 or epoch == 1:
         print(f"Epoch {epoch:03d}, Loss: {loss:.4f}, Val Acc: {val_acc:.4f}")
 
-print(f"\n✅ Best Val Acc: {best_val:.4f}")
+print(f"\nBest Val Acc: {best_val:.4f}")
 print(f"Test Acc: {best_metrics['acc']:.4f}")
 print(f"Precision: {best_metrics['precision']:.4f}")
 print(f"Recall: {best_metrics['recall']:.4f}")
