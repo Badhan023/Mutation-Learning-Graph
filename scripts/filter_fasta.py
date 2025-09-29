@@ -4,7 +4,7 @@ import argparse
 
 def filter_fasta(input_fasta, output_fasta):
     """
-    Remove sequences containing 'N' from a FASTA file.
+    Remove sequences containing 'n' from a FASTA file.
     Print counts before and after filtering.
     """
     # Read all records
@@ -12,7 +12,7 @@ def filter_fasta(input_fasta, output_fasta):
     total_before = len(records)
 
     # Filter out sequences with N
-    filtered_records = [record for record in records if "N" not in str(record.seq)]
+    filtered_records = [record for record in records if "n" not in str(record.seq)]
     total_after = len(filtered_records)
 
     # Write filtered records
