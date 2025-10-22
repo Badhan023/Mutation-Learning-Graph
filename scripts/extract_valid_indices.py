@@ -21,4 +21,4 @@ valid_indices = np.array([i for i, label in enumerate(y) if label in keep_classe
 
 #===================Save valid indices=========================
 np.save(valid_indices_file, valid_indices)
-print(f"✅ Saved valid indices to {valid_indices_file} with {len(valid_indices)} entries.")
+print(f"Saved valid indices to {valid_indices_file} with {len(valid_indices)} entries.")
