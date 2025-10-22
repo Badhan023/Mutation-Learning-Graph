@@ -1,5 +1,4 @@
 We present the Mutation Learning Graph (MLG), a directed graph framework that organizes SARS-CoV-2 variants based on their cumulative mutation profiles relative to the reference genome (NC\_045512.2), thereby capturing the dynamics of mutation propagation.
-MLG datasets of 10 geographic locations can be found [here](https://zenodo.org/records/16952912).
 
 # Installation
 After cloning the git repository, create a conda environment using the environment.yml.
@@ -31,11 +30,11 @@ To run the baseline models, run the following commands.
 ```
 bash baseline_models.sh Egypt
 ```
-For any other dataset you want to build, replace Egypt with your directory name for the above commands.
+For any other dataset you want to build, replace "Egypt" with your directory name in the above commands.
 ```
 bash build_mlg.sh reference.fasta <dataset_directory>
 bash baseline_models.sh <dataset_directory>
 ```
 
 # MLG dataset
-All ten MLG datasets for the regions: Egypt, Iran, Nigeria, Bangladesh, Queensland(Australia), China, Estonia, Wyoming(USA), Chile, and South Africa, can be found in this [link]([https://gisaid.org/](https://zenodo.org/records/17221454)).
+All ten MLG datasets for the regions: Egypt, Iran, Nigeria, Bangladesh, Queensland (Australia), China, Estonia, Wyoming (USA), Chile, and South Africa, can be found [here](https://zenodo.org/records/16952912).
