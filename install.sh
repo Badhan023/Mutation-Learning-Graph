@@ -11,3 +11,5 @@ pip install -U scikit-learn
 
 # ---- transformers & helpers ----
 pip install transformers einops
+
+pip install torch_geometric
