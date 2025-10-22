@@ -11,7 +11,7 @@ This will create a conda environment named **mlg**. Activate the **mlg** conda e
 bash install.sh
 ```
 
-# Dataset
+# Building your own dataset
 For downloading a dataset, we have used [GISAID](https://gisaid.org/). Go to the homepage, and create an account if you do not have one. Follow the steps below to download a dataset.
 1. Log in.
 2. EpiCov > Search > Choose a location (preferably a country or a state). Let's assume it to be Bangladesh.
