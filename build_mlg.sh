@@ -1,7 +1,19 @@
 #!/bin/bash
+#SBATCH --job-name=habijabi
+#SBATCH --account=gpce
+#SBATCH --partition=a100_normal_q
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=20:00:00
+#SBATCH --gres=gpu:1        # Request 1 GPU
+#SBATCH --mem=32G           # Request 32 GB of memory
+#SBATCH --cpus-per-task=16
+#SBATCH --mail-type=ALL   # Send t notification at the start and end of the job
+#SBATCH --mail-user=badhan@vt.edu   # Send email notification to this address
+#SBATCH --output=/home/badhan/quasi/slurm_out/%j.out
 
-module reset
-module list
+echo "job $SLURM_JOB_ID has started on node" 
+
 
 conda activate mlg
 
@@ -17,31 +29,33 @@ refSeq="$1"      #refseq
 echo $2
 dir="$2"   #directory
 
+conda activate mlg
+
 #lineage to label
 #python3 lineages/lineage_to_label.py
 
-#filter sequences with N
-python3 scripts/filter_fasta.py "$dir"/sequences.fasta "$dir"/filtered_sequences.fasta
-
 #sort by date
-python3 scripts/sort_by_date.py "$dir"/filtered_sequences.fasta "$dir"/sorted_sequences.fasta
+python3 scripts/sort_by_date.py "$dir"/sequences.fasta "$dir"/sorted_sequences.fasta
 
 #append refSeq
 # Ensure reference.fasta ends with a newline, then concat
 # The trailing \n inside $(cat ...) guarantees the blank line.
-python3 scripts/append_fasta.py "$refSeq" "$dir"/sorted_sequences.fasta "$dir"/all_sequences.fasta
+#python3 scripts/append_fasta.py "$refSeq" "$dir"/sorted_sequences.fasta "$dir"/all_sequences.fasta
 
 #mafft
-mafft --6merpair --thread -1 --keeplength --addfragments "$dir"/all_sequences.fasta "$refSeq" > "$dir"/aligned_sequences.fasta
-#rm "$dir"/sorted_sequences.fasta
+mafft --6merpair --thread -1 --keeplength --addfragments "$dir"/sorted_sequences.fasta "$refSeq" > "$dir"/aligned_sequences.fasta
+rm "$dir"/sorted_sequences.fasta
 
 #truncate coding region
 python3 scripts/truncate.py "$dir"/aligned_sequences.fasta "$dir"/truncated_sequences.fasta
 rm "$dir"/aligned_sequences.fasta
 
+#filter truncated sequences with N
+python3 scripts/filter_fasta.py "$dir"/truncated_sequences.fasta "$dir"/filtered_sequences.fasta
+
 #unique sequences
-python3 scripts/unique.py "$dir"/truncated_sequences.fasta "$dir"/unique_sequences.fasta
-rm "$dir"/truncated_sequences.fasta
+python3 scripts/unique.py "$dir"/filtered_sequences.fasta "$dir"/unique_sequences.fasta
+#rm "$dir"/truncated_sequences.fasta
 
 #mutation positions
 python3 scripts/mutation_positions.py "$dir"
@@ -66,7 +80,7 @@ python3 scripts/gap_remove.py "$dir"/hypothetical_alignments.fasta "$dir"/hypoth
 
 #update the unique_sequences.fasta file
 python3 scripts/update_fasta.py "$dir"/unique_sequences.fasta "$dir"/updated_unique_sequences.fasta
-rm "$dir"/unique_sequences.fasta
+#rm "$dir"/unique_sequences.fasta
 
 #combine the original and hypothetical sequences
 cat "$dir"/updated_unique_sequences.fasta "$dir"/hypothetical_alignments.fasta > "$dir"/combined_sequences.fasta
