@@ -20,3 +20,6 @@ For downloading a dataset, we have used [GISAID](https://gisaid.org/). Go to the
 5. When you click Download, you will see five options. Download **Nucleotide Sequences (FASTA)** and **Sequencing technology metadata** separately. Name those **sequences.fasta** and **metadata.tsv** respectively.
 6. Create a folder inside the **Mutation-Learning-Graph** directory for the dataset (Bangladesh in this case) and have the fasta and tsv files in that directory.
    
+# Run the code
+After installation, run the build-mlg.sh file.
+
