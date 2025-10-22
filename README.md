@@ -19,7 +19,23 @@ For downloading a dataset, we have used [GISAID](https://gisaid.org/). Go to the
 4. **Select all** the genomes filtered, and click **Download**.
 5. When you click Download, you will see five options. Download **Nucleotide Sequences (FASTA)** and **Sequencing technology metadata** separately. Name those **sequences.fasta** and **metadata.tsv** respectively.
 6. Create a folder inside the **Mutation-Learning-Graph** directory for the dataset (Bangladesh in this case) and have the fasta and tsv files in that directory.
-   
-# Run the code
-After installation, run the build-mlg.sh file.
+For any dataset, we will need just these two input files: sequences.fasta and metadata.tsv.
 
+# Run the code
+Let us consider the Egypt directory as the test data. The directory has two files: sequences.fasta and metadata.tsv. After installation, run the following command. 
+```
+bash build_mlg.sh reference.fasta Egypt
+```
+This will generate several files as the outputs of the whole process. 
+To run the baseline models, run the following commands.
+```
+bash baseline_models.sh Egypt
+```
+For any other dataset you want to build, replace Egypt with your directory name for the above commands.
+```
+bash build_mlg.sh reference.fasta <dataset_directory>
+bash baseline_models.sh <dataset_directory>
+```
+
+# MLG dataset
+All ten MLG datasets for the regions: Egypt, Iran, Nigeria, Bangladesh, Queensland(Australia), China, Estonia, Wyoming(USA), Chile, and South Africa, can be found in this [link]([https://gisaid.org/](https://zenodo.org/records/17221454)).
