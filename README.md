@@ -2,7 +2,7 @@ We present the Mutation Learning Graph (MLG), a directed graph framework that or
 MLG datasets of 10 geographic locations can be found [here](https://zenodo.org/records/16952912).
 
 # Installation
-After git cloning, create a conda environment using the environment.yml.
+After cloning the git repository, create a conda environment using the environment.yml.
 ```
 conda env create -f environment.yml
 ```
