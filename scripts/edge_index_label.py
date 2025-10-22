@@ -55,5 +55,5 @@ labels = labels[indices]
 
 # Save
 np.savez(output_file, edge_index=edge_index, label=labels)
-print(f"✅ Saved edge prediction dataset to {output_file}")
+print(f"Saved edge prediction dataset to {output_file}")
 print(f"Total edges: {edge_index.shape[1]}, Positive: {pos_labels.shape[0]}, Negative: {neg_labels.shape[0]}")
