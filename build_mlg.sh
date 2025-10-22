@@ -38,7 +38,7 @@ python3 scripts/filter_fasta.py "$dir"/truncated_sequences.fasta "$dir"/filtered
 
 #unique sequences
 python3 scripts/unique.py "$dir"/filtered_sequences.fasta "$dir"/unique_sequences.fasta
-#rm "$dir"/truncated_sequences.fasta
+rm "$dir"/truncated_sequences.fasta
 
 #mutation positions
 python3 scripts/mutation_positions.py "$dir"
@@ -63,7 +63,7 @@ python3 scripts/gap_remove.py "$dir"/hypothetical_alignments.fasta "$dir"/hypoth
 
 #update the unique_sequences.fasta file
 python3 scripts/update_fasta.py "$dir"/unique_sequences.fasta "$dir"/updated_unique_sequences.fasta
-#rm "$dir"/unique_sequences.fasta
+rm "$dir"/unique_sequences.fasta
 
 #combine the original and hypothetical sequences
 cat "$dir"/updated_unique_sequences.fasta "$dir"/hypothetical_alignments.fasta > "$dir"/combined_sequences.fasta
@@ -75,7 +75,6 @@ python3 scripts/depth_from_mutation.py "$dir"/updated_mutation.json "$dir"/depth
 
 # Run your Python script
 python3 scripts/dnabert2_embeddings.py "$dir"/combined_sequences.fasta "$dir"/dnabert2_embeddings.npy 4
-#python3 quick_test.py
 
 #map embedding to ids
 python3 scripts/map_embeddings_to_ids.py "$dir"
@@ -91,5 +90,3 @@ python3 scripts/convert_to_sparse.py "$dir"
 
 #edge feature
 python3 scripts/edge_feature.py "$dir"
-
-echo "job $SLURM_JOB_ID has ended on node"
