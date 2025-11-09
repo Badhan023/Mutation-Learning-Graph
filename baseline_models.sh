@@ -41,4 +41,3 @@ python3 scripts/MLP.py "$dir"
 
 #MLP edge prediction
 python3 scripts/MLP_edge_pred.py "$dir"
-echo "job $SLURM_JOB_ID has ended on node"
