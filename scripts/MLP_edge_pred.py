@@ -203,7 +203,7 @@ auc_m, auc_s = summarize(all_auroc)
 auprc_m, auprc_s = summarize(all_auprc)
 
 lines = [
-    "MLP Edge Prediction\n",
+    "MLP Edge Prediction",
     "Accuracy:  {:.4f} ± {:.4f}".format(acc_m, acc_s),
     "F1 Score:  {:.4f} ± {:.4f}".format(f1_m, f1_s),
     "AUROC:     {:.4f} ± {:.4f}".format(auc_m, auc_s),
