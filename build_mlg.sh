@@ -1,23 +1,12 @@
 #!/bin/bash
 #add slurm specification here
-echo "job $SLURM_JOB_ID has started on node" 
-
 
 conda activate mlg
-
-# Check if the GPU is available and print its details
-#echo "-----------------------------------------------------------------------------------------------------"
-#python -c "import torch; print('PyTorch:', torch.__version__)"
-#python -c "import torchvision; print('TorchVision:', torchvision.__version__)"
-#python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
-#echo "-----------------------------------------------------------------------------------------------------"
 
 echo $1     
 refSeq="$1"      #refseq
 echo $2
 dir="$2"   #directory
-
-conda activate mlg
 
 #lineage to label
 #python3 lineages/lineage_to_label.py
