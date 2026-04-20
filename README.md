@@ -3,6 +3,7 @@ We present the Mutation Learning Graph (MLG), a directed graph framework that or
 # Installation
 After cloning the git repository, create a conda environment using the environment.yml.
 ```
+cd Mutation-Learning-Graph
 conda env create -f environment.yml
 ```
 This will create a conda environment named **mlg**. Activate the **mlg** conda environment and install the dependencies by running the following command.
