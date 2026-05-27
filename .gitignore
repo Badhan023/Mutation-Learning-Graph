@@ -1,0 +1,6 @@
+#ignore everything inside the Egypt directory
+Egypt/*
+
+#but keep the sequence fasta and metadata
+!Egypt/sequence.fasta
+!Egypt/metadata.tsv
