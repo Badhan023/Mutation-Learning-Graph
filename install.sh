@@ -2,8 +2,8 @@
 set -euo pipefail
 
 
-# ---- GPU PyTorch (CUDA 11.8) ----
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# ---- GPU PyTorch ----
+pip install torch torchvision torchaudio
 
 # ---- core scientific stack ----
 pip install numpy pandas scipy
