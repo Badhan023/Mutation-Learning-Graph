@@ -8,6 +8,7 @@ conda env create -f environment.yml
 ```
 This will create a conda environment named **mlg**. Activate the **mlg** conda environment and install the dependencies by running the following command.
 ```
+conda activate mlg
 bash install.sh
 ```
 
